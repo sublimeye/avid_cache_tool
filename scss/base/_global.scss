@@ -1,0 +1,29 @@
+@mixin cf {
+	&:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+/*
+	Global variables , mixins
+*/
+@mixin w8-font {
+	font-family: 'Segoe UI Light', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+/*
+	Global styles
+*/
+* {
+	box-sizing: border-box;
+}
+
+.g-hidden {
+	display: none;
+}
+
+.g-visible {
+	display: block;
+}

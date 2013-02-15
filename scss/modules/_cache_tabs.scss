@@ -1,0 +1,26 @@
+.b-cache-tabs {
+	@include cf;
+	list-style: none;
+}
+
+.b-cache-tab {
+	cursor: pointer;
+	float: left;
+	background: #efefef;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px 17px;
+
+	&:hover {
+		background: #cacaca;
+	}
+}
+
+.b-cache-tab-content {
+	display: block;
+}
+
+.b-cache-tab-content + .b-cache-tab-content {
+	display: none;
+}
+

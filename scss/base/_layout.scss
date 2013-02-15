@@ -1,0 +1,34 @@
+@mixin header-element {
+	position: absolute;
+	height: 100%;
+}
+
+.b-app-content {
+	@include cf;
+}
+
+.b-app-header {
+	position: relative;
+	width: 100%;
+	background: #ccc;
+	height: 30px;
+	line-height: 30px;
+
+	.b-app-header-title {
+		position: absolute;
+		margin: 0;
+		font-size: 14px;
+		left: 20px;
+	}
+
+	.b-app-header-userinfo {
+		@include header-element;
+		right: 20px;
+	}
+
+	.b-app-header-time {
+		@include header-element;
+		left: 45%;
+	}
+
+}

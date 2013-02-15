@@ -1,0 +1,49 @@
+<!-- Tab switching buttons -->
+<nav class="b-cache-tabs">
+<% _.each(data, function(serversGroup) { %>
+	<li class="b-cache-tab" data-tabindex="<%= serversGroup.title %>"><%= serversGroup.title %></li>
+<% }); %>
+</nav>
+
+<!-- Tab contents -->
+<% _.each(data, function( serversGroup ) { %>
+	<section class="b-cache-tab-content" data-tabswitch="<%= serversGroup.title %>">
+
+		<% _.each(serversGroup.servers, function( server ) { %>
+			<table class="d-table-sections">
+
+				<% _.each(server.cacheData, function( cachegroup, cachegroupKey ) { %>
+					<tbody class="d-section-body" data-priority="">
+
+						<% var i = 0; _.each(cachegroup, function( subgroup, subgroupKey ) { %>
+							<tr class="d-section-row" data-priority="0">
+
+								<% if (i++ === 0) { %>
+									<td class="d-section-title" rowspan="<%= Object.keys(cachegroup).length %>"><%= cachegroupKey %></td>
+								<% } %>
+
+								<td class="d-cache-group"><b><%= subgroupKey %></b></td>
+
+									<% _.each(options.localeOrder, function( locale, i ) { %>
+										<td>
+											<% if ( subgroup[locale] ) { %>
+											<a data-url="<%= server.url + subgroup[locale].url %>"
+											data-last-updated="<%= subgroup[locale].lastUpdate %>"
+											title="Elapsed: <%= subgroup[locale].elapsed %> Items: <%= subgroup[locale].items %>"
+											class="d-item <%= subgroup[locale].pendingStatus %>"><%= locale %></a>
+											<% } %>
+										</td>
+									<% }); %>
+
+							</tr>
+						<% });  %>
+
+
+					</tbody>
+				<% }); %>
+
+			</table>
+		<% }); %>
+
+	</section>
+<% }); %>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Avid Cache Tool</title>
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="css/ie.css">
+		<script src="javascript/libs/shim/html5shiv.js"></script>
+	<![endif]-->
+
+	<!-- STYLES -->
+	<link rel="stylesheet" href="css/index.css">
+
+	<!-- SCRIPTS -->
+	<script data-main="javascript/main" src="javascript/libs/require/require.js"></script>
+
+</head>
+<body>
+<header class="b-app-header">
+	<h1 class="b-app-header-title">Avid Cache Tool</h1>
+
+	<div class="b-app-header-userinfo js-userinfo"></div>
+	<div class="b-app-header-time"></div>
+</header>
+
+<div class="b-app-content"></div>
+<div class="b-app-controls"></div>
+
+<footer class="b-app-footer">&copy; 2012 Avid</footer>
+
+<div class="b-modal">
+	<div class="b-modal-inner">
+
+		<div class="b-auth-modal">
+			<h2>Sign In</h2>
+
+			<form class="js-auth-form" action="#login">
+				<label class="b-field-title">Login:
+					<input class="js-field-login" name="UserName" tabindex="1" type="text" placeholder="fname.sname@avid.com" required autofocus></label>
+				<label class="b-field-title">Password:
+					<input tabindex="2" type="password" name="Password" placeholder="" required></label>
+				<input tabindex="3" type="submit" value="Login">
+				<h4 class="b-auth-notification">Seems we've got a problem.<br/>Please, try again.</h4>
+			</form>
+		</div>
+
+	</div>
+</div>
+</body>
+</html>

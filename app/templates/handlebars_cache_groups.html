@@ -1,0 +1,28 @@
+<nav class="b-cache-tabs">
+{{#each unite}}
+	<li class="b-cache-tab" data-tabindex="{{title}}">{{title}}</li>
+{{/each}}
+</nav>
+
+{{#each unite}}
+<section class="b-cache-tab-content" data-tabswitch="{{title}}">
+	{{#each servers}}
+		<table class="d-table-sections">
+			{{#each cacheData}}
+			<tbody class="d-section-body" data-priority="">
+
+				{{#eacObject this}}
+					<tr class="d-section-row" data-priority="0">
+						{{#if iteration === 1}}YES{{/if}}
+
+						<td class="d-section-title" rowspan="{{../numberOfSubsections}}">{{@key}}</td>
+						<td class="d-cache-group"><b>{{@key}}</b></td>
+					</tr>
+				{{/eacObject}}
+
+			</tbody>
+			{{/each}}
+		</table>
+	{{/each}}
+</section>
+{{/each}}
